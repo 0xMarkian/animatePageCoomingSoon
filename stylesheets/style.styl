@@ -1,0 +1,171 @@
+@import 'mixin.styl'
+
+fontsDir = '../fonts'
+main-color = rgb(57,187,209)
+second-color = rgb(235,235,235)
+* 
+	box-sizing border-box
+body
+	background main-color
+	font-size 120%
+	@media screen and (max-width: 992px)
+			font-size 200%
+.container
+	height 500px
+	animTime = 3s
+	animDelay = 0s
+	animTimeFunc = cubic-bezier(0.075, 0.82, 0.165, 1)
+	@keyframes gravitation
+		0% 
+			transform translateY(-.3vh)
+		50% 
+			transform translateY(1vh)
+		100%
+			transform translateY(-.3vh)
+	#planet
+		width 250px
+		height @width
+		margin-top 7%
+		background second-color
+		shadowSize = 20px
+		box-shadow inset - shadowSize  (- shadowSize) (shadowSize/3) (shadowSize/3) darken(second-color, 20%)
+		border-radius 50%
+		margin 7% auto 0 auto
+		adaptiveForSmall(400px,400px)
+		animation planetMove (animTime/2) animTimeFunc both
+		@keyframes planetMove
+			from
+				transform translateX(50%) rotate(-10deg)
+			to
+				transform translate3d(0,0,0) rotate(0)
+				animation gravitation 2s linear infinite
+		img
+			position relative
+			// max-width 30%
+			animation pinionRotate 4s linear infinite
+			&:nth-child(1)
+				left 20%
+				top 20%
+			&:nth-child(2)
+				left 10.5%
+				top 30%
+				animation-duration 2.2s 
+			&:nth-child(3)
+				top 45%
+				left 0%
+				transform scale(.8)
+				backface-visibility hidden
+				animation-direction reverse
+				animation-duration 2s 
+		@keyframes pinionRotate
+			from
+				transform rotate(-180deg)
+			to
+				transform rotate(180deg)
+	blocksWidth = 700px
+	smallBlocksWidth = 92%
+	#rocket-wrap	
+		width blocksWidth
+		position relative
+		margin 0 auto
+		animation rocketMove animTime animDelay animTimeFunc backwards
+		z-index 2
+		@keyframes rocketMove
+			from
+				transform translateX(-150%)
+			to
+				transform translateX(0)
+		adaptiveForSmall(smallBlocksWidth)
+		.rocket
+			position absolute
+			&:nth-child(1)
+				left 3.2%
+			&:nth-child(2)
+				right -19px
+			&:before,
+			&:after
+				content ''
+				background rgba(30,30,30,.8)
+				width 1%
+				height 135%
+				absolute top 68% left
+				margin-left 26%
+				transform-origin 0 0
+				animation rocketAxisMove animTime animDelay animTimeFunc backwards
+				@keyframes rocketAxisMove
+					from
+						transform rotate(13deg)
+					to
+						transform rotate(0)
+			&:before
+				left 1%
+			&:after
+				left 3%
+			img
+				max-width 100%
+	#plate-wrap
+		width blocksWidth
+		max-width 100%
+		text-align center
+		position relative
+		padding-top 120px
+		margin 0 auto
+		color darken(main-color,30)
+		adaptiveForSmall(smallBlocksWidth)
+		animation plateMove animTime animDelay animTimeFunc backwards
+		@keyframes plateMove
+			from
+				transform translateX(calc(-150%+(-20px)))
+			to
+				transform translateX(0)
+		#plate
+			background second-color
+			width 90%
+			left 5%
+			text-align center
+			padding 1% 0
+			position relative
+			h1
+				margin 0
+				text-transform uppercase
+				font-size 290%
+				font-weight 300
+				@font-face
+					src url(fontsDir/TESLA.ttf)
+					font-family Tesla
+				font-family Tesla,sans-serif
+			h4
+				margin 0 0 1% 0
+				font-size 150%
+				@font-face
+					src url(fontsDir/BebasNeueRegular.otf)
+					font-family BebasNeue
+				font-family BebasNeue
+			p
+				font-size 80%
+				margin 0
+				position relative
+				&:before,
+				&:after
+					content ''
+					width 10%
+					height 1px
+					background black
+				&:before
+					absolute top 50% left 160px
+				&:after
+					absolute top 50% right 160px
+			&:after,
+			&:before
+				content ''
+				width 20px
+				height @width
+				border-radius 50%
+				background main-color
+				@media screen and (max-width:992px)
+					width (@width/1.5)
+					height @width
+			&:after
+				absolute top 4% left 1%
+			&:before
+				absolute top 4% right 1%
