@@ -1,4 +1,35 @@
-adaptiveForSmall( width = false, height = false)
+adaptiveForSmall()
 	@media screen and (max-width: 992px)
-			width width if width
-			height height if height
+			block
+countTime(distance,speed)
+	distance = distance is a 'unit' ? distance : convert(distance)
+	speed = speed is a 'unit' ? speed : convert(speed)
+	return unit(distance / speed,'s')
+countDistance(x,y)
+	x = x is a 'unit' ? x : convert(x)
+	y = y is a 'unit' ? y : convert(y)
+	return math(x**2+y**2,'sqrt')
+sqrt(x)
+	return math(x,'sqrt')
+
+random(minarg,maxarg)
+	return floor(math(0, 'random')*(maxarg -+minarg + 1) + minarg)
+
+
+
+fly(speed,coords,animArgs...)
+
+	letters = A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z
+	distanceX = coords.x[1] - coords.x[0]
+	distanceY = coords.y[1] - coords.y[0]
+	distance = countDistance(distanceX,distanceX)
+	time = countTime(distance,speed)
+	animName = flyAnim+'-'+letters[random(1,20)]
+	animation animName time animArgs
+	
+	@keyframes animName
+		from
+			transform :translateX(coords.x[0]) translateY(coords.y[0])
+		to
+			transform :translateX(coords.x[1]) translateY(coords.y[1])
+	
