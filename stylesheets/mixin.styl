@@ -1,35 +1,64 @@
 adaptiveForSmall()
 	@media screen and (max-width: 992px)
 			block
-countTime(distance,speed)
-	distance = distance is a 'unit' ? distance : convert(distance)
-	speed = speed is a 'unit' ? speed : convert(speed)
-	return unit(distance / speed,'s')
-countDistance(x,y)
-	x = x is a 'unit' ? x : convert(x)
-	y = y is a 'unit' ? y : convert(y)
-	return math(x**2+y**2,'sqrt')
+
 sqrt(x)
 	return math(x,'sqrt')
-
 random(minarg,maxarg)
 	return floor(math(0, 'random')*(maxarg -+minarg + 1) + minarg)
 
+countDistance(x,y)
+	x = x is a 'unit' ? x : convert(x)
+	y = y is a 'unit' ? y : convert(y)
+	return math(x**2 + y**2,'sqrt')
 
-
-fly(speed,coords,animArgs...)
-
-	letters = A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z
+countTime(coords,speed)
 	distanceX = coords.x[1] - coords.x[0]
 	distanceY = coords.y[1] - coords.y[0]
-	distance = countDistance(distanceX,distanceX)
-	time = countTime(distance,speed)
-	animName = flyAnim+'-'+letters[random(1,20)]
+	distance = countDistance(distanceX,distanceY)
+
+	distance = distance is a 'unit' ? distance : convert(distance)
+	speed = speed is a 'unit' ? speed : convert(speed)
+
+	return unit(distance / speed,'s')
+
+letters = A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z
+
+changeArr(arr,index)
+	for i in index..(length(arr)- 1)
+		arr[i] = arr[i+1]
+	pop(arr)
+setAnimName(arr)
+	index = random(0,length(arr))
+	arrEl = arr[index]
+	changeArr(arr,index)
+	return 'flyAnim-'+arrEl
+
+fly(speed,coords,animArgs)
+	if unit(speed) is 's'
+		time = speed
+	else
+		time = countTime(coords,speed)
+	animName = setAnimName(letters)
 	animation animName time animArgs
-	
 	@keyframes animName
 		from
 			transform :translateX(coords.x[0]) translateY(coords.y[0])
 		to
 			transform :translateX(coords.x[1]) translateY(coords.y[1])
-	
+
+freeWrapFly(speed,coords,animArgs,acceleration = 10)
+	rocketCoords = {
+		x:coords[x][0] 0vw,
+		y:coords[y][0] 0vh
+	}
+	rocketTime = countTime(rocketCoords,speed)
+	.rocket
+		fly(speed,rocketCoords,animArgs)
+	wrapSpeed = speed +acceleration
+	wrapDelay = rocketTime
+	wrapCoords = {
+		x:0vw coords[x][1]
+		y:0vw coords[y][1]
+	}
+	fly(wrapSpeed, wrapCoords,linear wrapDelay both)

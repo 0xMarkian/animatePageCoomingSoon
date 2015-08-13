@@ -1,16 +1,15 @@
-@import 'mixin.styl'
+@import 'mixin'
+@import 'placeholders'
 
 fontsDir = '../fonts'
 main-color = rgb(57,187,209)
 second-color = rgb(235,235,235)
 
-/*===========animation=============*/
-speed = 30 // %/s
+//===========animation=============
+speed = 30// viewport width or height per second
 
-animTime = 5s
-animDelay = 0s
-animTimeFunc = linear
-rocketComeDelay = 0s
+animTimeFunc = cubic-bezier(0.075, 0.82, 0.165, 1)
+rocketComeDelay = 3s
 
 *
 	box-sizing border-box
@@ -22,22 +21,15 @@ body
 	@media screen and (max-width: 992px)
 			font-size 200%
 .container
-	@keyframes gravitation
-		0%
-			transform translateY(-.3vh)
-		50%
-			transform translateY(1vh)
-		100%
-			transform translateY(-.3vh)
 	#planet
 		$animTimeFunc = animTimeFunc
 		$animDelay = rocketComeDelay
 		coords = {
-			x: 0% 20%,
-			y: 40% 0%
+			x: 0vw 20vw,
+			y: 40vh -10vh
 		}
-		fly(speed,coords,$animDelay,$animTimeFunc,both)
-					
+		fly(speed,coords,$animDelay $animTimeFunc both)
+
 		width 250px
 		height @width
 		margin-top 7%
@@ -49,7 +41,6 @@ body
 		adaptiveForSmall(400px,400px)
 		img
 			position relative
-			// max-width 30%
 			animation pinionRotate 4s linear infinite
 			&:nth-child(1)
 				left 20%
@@ -57,14 +48,16 @@ body
 			&:nth-child(2)
 				left 10.5%
 				top 30%
+				animation-direction reverse
 				animation-duration 2.2s
 			&:nth-child(3)
-				top 45%
-				left 0%
-				transform scale(.8)
+				top 46%
+				left 3%
 				backface-visibility hidden
+				zoom .8
 				animation-direction reverse
 				animation-duration 2s
+				// @keyframes smPinionRotate
 		@keyframes pinionRotate
 			from
 				transform rotate(-180deg)
@@ -73,32 +66,25 @@ body
 	#rocket-plate-wrap
 		//animation
 		$animTimeFunc = animTimeFunc
-		$plateAnimTime = 3s
-		$plateAnimTimeFunc = ease
 		$animDelay = rocketComeDelay
 		coords = {
-			x: -80% 0%,
-			y: 50% 0%
+			x: -70vw 0vw,
+			y: 50vh 0vh
 		}
-		fly(speed,coords,$animDelay,$animTimeFunc both)
+		fly(speed,coords,$animDelay $animTimeFunc both)
 		+adaptiveForSmall()
-			coords = {
-				x: -100% 0%,
-				y: 50% 0%
-			}
-			fly(speed,coords,$animDelay,$animTimeFunc both)
-			
-		// transform translateX(-100%) translateY(0)
-		
-		blocksWidth = 60%
+			coords[x][0] = -100vw
+			fly(speed,coords,$animDelay $animTimeFunc both)
+		blockWidth = 700px
 		$offset = 70
-		width 100%
-		padding 0 ((100%- blocksWidth)/2)
+		width blockWidth
 		+adaptiveForSmall()
-			padding 0 3%
+			width 92%
 		margin 0 auto
 		
 
+		$plateAnimTime = 1s
+		$plateAnimTimeFunc = cubic-bezier(0.895, 0.03, 0.685, 0.22)
 		#rocket-wrap
 			width 100%
 			position relative
@@ -108,7 +94,7 @@ body
 				&:nth-child(1)
 					left 3.5%
 				&:nth-child(2)
-					right -12px
+					right -20px
 				&:before,
 				&:after
 					content ''
@@ -195,3 +181,29 @@ body
 					absolute top 4% left 1%
 				&:before
 					absolute top 4% right 1%
+	#rocket-free-wrap
+		.free-wrap-first
+			absolute top 150px left 100px
+			$animTimeFunc = cubic-bezier(0.55, 0.055, 0.675, 0.19)
+			coords = {
+				x: -30vw 50vw
+				y: 30vh -50vh
+			}
+			freeWrapFly(speed,coords,$animTimeFunc,80)
+			.rocket
+				position relative
+				img
+					transform rotate(-15deg)
+				&:after
+					content ''
+					width 1px
+					height 60%
+					background white
+					absolute top 75% left 40%
+			img.component
+				relative top 20px left 23px
+				display block
+				z-index 2
+		.free-wrap-second
+			@extend $newhold
+			width 100%
