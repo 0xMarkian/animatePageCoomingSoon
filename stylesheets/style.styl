@@ -22,68 +22,122 @@ body
 			font-size 200%
 .container
 	#planet
-		$animTimeFunc = animTimeFunc
-		$animDelay = rocketComeDelay
-		coords = {
-			x: 0vw 20vw,
-			y: 40vh -10vh
-		}
-		fly(speed,coords,$animDelay $animTimeFunc both)
-
+		position relative
 		width 250px
 		height @width
-		margin-top 7%
 		background second-color
 		sS = 20px //shadowSize
 		box-shadow inset - sS  (- sS) (sS/3) (sS/3) darken(second-color, 20%)
 		border-radius 50%
 		margin 7% auto 0 auto
 		adaptiveForSmall(400px,400px)
-		img
-			position relative
-			animation pinionRotate 4s linear infinite
-			&:nth-child(1)
-				left 20%
-				top 20%
-			&:nth-child(2)
-				left 10.5%
-				top 30%
-				animation-direction reverse
-				animation-duration 2.2s
-			&:nth-child(3)
-				top 46%
-				left 3%
-				backface-visibility hidden
-				zoom .8
-				animation-direction reverse
-				animation-duration 2s
-				// @keyframes smPinionRotate
-		@keyframes pinionRotate
-			from
-				transform rotate(-180deg)
-			to
-				transform rotate(180deg)
+		// img
+		// 	position relative
+		// 	animation pinionRotate 4s linear infinite
+		// 	&:nth-child(1)
+		// 		left 20%
+		// 		top 20%
+		// 	&:nth-child(2)
+		// 		left 10.5%
+		// 		top 30%
+		// 		animation-direction reverse
+		// 		animation-duration 2.2s
+		// 	&:nth-child(3)
+		// 		top 46%
+		// 		left 3%
+		// 		backface-visibility hidden
+		// 		zoom .8
+		// 		animation-direction reverse
+		// 		animation-duration 2s
+		// 		// @keyframes smPinionRotate
+		#rocket-free-wrap
+			$animTimeFunc = cubic-bezier(0.55, 0.055, 0.675, 0.19)
+			div[class^='free-wrap']
+				position absolute
+				.rocket
+					position relative
+					img
+						transform rotate(-15deg)
+					&:after
+						content ''
+						width 1px
+						height 60%
+						background white
+						absolute top 75% left 40%
+				img.component
+					position relative
+					// top 40px
+					margin 20px 0 0 23px
+					display block
+					z-index 2
+					transition all .5s 2s
+					@keyframes pinionRotate
+						from
+							transform rotate(-180deg)
+						to
+							transform rotate(180deg)
+			.free-wrap-first
+				top -20px
+				coords = {
+					x: -30vw 40vw
+					y: 30vh -50vh
+				}
+				freeWrapFly(speed,coords,$animTimeFunc,80)
+			.free-wrap-second
+				top -50px
+				left 100px
+				coords = {
+					x: -50vw 40vw
+					y: 35vh -50vh
+				}
+				freeWrapFly(speed,coords,$animTimeFunc,80)
+			.free-wrap-third
+				top 10px
+				left 90px
+				coords = {
+					x: 60vw -40vw
+					y: 30vh -40vh
+				}
+				freeWrapFly(speed,coords,$animTimeFunc,80)
+				.rocket
+					img
+						transform rotate(-165deg) !important
 	#rocket-plate-wrap
+		// animation none !important
 		//animation
-		$animTimeFunc = animTimeFunc
+		$animTimeFunc = cubic-bezier(0.23, 1, 0.32, 1)
 		$animDelay = rocketComeDelay
+		
 		coords = {
 			x: -70vw 0vw,
 			y: 50vh 0vh
 		}
-		fly(speed,coords,$animDelay $animTimeFunc both)
+		countedAnimData = fly(speed,coords,$animDelay $animTimeFunc backwards,,false)//this work only like function and return value
 		+adaptiveForSmall()
 			coords[x][0] = -100vw
 			fly(speed,coords,$animDelay $animTimeFunc both)
+
+		//tb - trembling, T - time, D - delay, F - function
+		$tbAnimTF = linear
+		$tbAnimT = 1s
+		$tbAnimD = countedAnimData.animArg[1]
+		$tbOffset = 4px
+		$tbAnimCoords = {
+			x:0 0,
+			y:0 (- unit($tbOffset/4,'vh'))
+		}
+		fly($tbAnimT, $tbAnimCoords, $tbAnimTF alternate infinite,,true, countedAnimData)
+		
 		blockWidth = 700px
-		$offset = 70
 		width blockWidth
 		+adaptiveForSmall()
 			width 92%
 		margin 0 auto
+		position relative
 		
 
-		$plateAnimTime = 1s
+		$offset = 70
+		$plateAnimTime = countedAnimData.animArg[1]/2.5
 		$plateAnimTimeFunc = cubic-bezier(0.895, 0.03, 0.685, 0.22)
 		#rocket-wrap
 			width 100%
@@ -104,12 +158,18 @@ body
 					absolute top 68% left
 					margin-left 26%
 					transform-origin 0 0
-					animation rocketAxisMove $plateAnimTime $animDelay $plateAnimTimeFunc
+					animation rocketTrembling $tbAnimT $tbAnimD $tbAnimTF alternate infinite, 
+							rocketAxisMove $plateAnimTime $animDelay $plateAnimTimeFunc
 					@keyframes rocketAxisMove
 						from
 							transform rotate(unit($offset/1.2,deg))
 						to
 							transform rotate(0)
+					@keyframes rocketTrembling
+						from
+							transform rotate(0)
+						to
+							transform rotate(unit($tbOffset/1.2,deg))
 				&:before
 					left 1%
 				&:after
@@ -123,13 +183,20 @@ body
 			padding-top 112px
 			margin 0 auto
 			color darken(main-color,30)
-			animation plateMove $plateAnimTime $animDelay $plateAnimTimeFunc
+			animation plateTrumbling $tbAnimT $tbAnimTF $tbAnimD alternate infinite, 
+					plateMove $plateAnimTime $animDelay $plateAnimTimeFunc
 			@keyframes plateMove
 				from
 					transform translateX( unit(- $offset,'px')) \
 										translateY(unit(- abs($offset/2),'px'))
 				to
 					transform translateX(0) translateY(0)
+			@keyframes plateTrumbling
+				from
+					transform translateX(0) translateY(0)
+				to
+					transform translateX( unit(- $tbOffset,'px')) \
+										translateY(unit(- abs($tbOffset/2),'px'))
 			#plate
 				background second-color
 				width 90%
@@ -181,29 +248,26 @@ body
 					absolute top 4% left 1%
 				&:before
 					absolute top 4% right 1%
-	#rocket-free-wrap
-		.free-wrap-first
-			absolute top 150px left 100px
-			$animTimeFunc = cubic-bezier(0.55, 0.055, 0.675, 0.19)
-			coords = {
-				x: -30vw 50vw
-				y: 30vh -50vh
-			}
-			freeWrapFly(speed,coords,$animTimeFunc,80)
-			.rocket
-				position relative
-				img
-					transform rotate(-15deg)
-				&:after
-					content ''
-					width 1px
-					height 60%
-					background white
-					absolute top 75% left 40%
-			img.component
-				relative top 20px left 23px
-				display block
-				z-index 2
-		.free-wrap-second
-			@extend $newhold
-			width 100%
+	>img
+		position fixed
+		animation iconRotate 4s  cubic-bezier(0.6, -0.28, 0.735, 0.045) infinite both alternate
+		@keyframes iconRotate
+			from
+				transform rotate(-20deg)
+			to
+				transform rotate(20deg)
+		&.wait
+			top 37%
+			left 30%
+			animation-direction alternate-reverse
+		&.scissors
+			top 10%
+			left 8%
+		&.settings
+			right 30%
+			top 10%
+		&.adjustment
+			bottom 20%
+			right 8%
+
+		

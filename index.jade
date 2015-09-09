@@ -7,10 +7,29 @@ head
 	link(rel="stylesheet", href="stylesheets/style.css")
 body
 	.container
+		img.wait(src="img/wait.png", alt="")
+		img.settings(src="img/settings.png", alt="")
+		img.adjustment(src="img/adjustment.png", alt="")
+		img.scissors(src="img/scissors.png", alt="")
 		#planet
-			img(src="img/layer2.png", alt="")
-			img(src="img/layer3.png", alt="")
-			img(src="img/layer3.png", alt="")
+			//- img(src="img/layer2.png", alt="")
+			//- img(src="img/layer3.png", alt="")
+			//- img(src="img/layer3.png", alt="")
+			#rocket-free-wrap
+				//- - var random = Math.floor(Math.random()*10)
+				//- - var name = 'anim-'+random
+				.free-wrap-first
+					.rocket
+						img(src="img/rocket.png", alt="")
+					img.component(src="img/layer2.png", alt="")
+				.free-wrap-second
+					.rocket
+						img(src="img/rocket.png", alt="")
+					img.component(src="img/layer3.png", alt="")
+				.free-wrap-third
+					.rocket
+						img(src="img/rocket.png", alt="")
+					img.component(src="img/layer3.png", alt="")
 		#rocket-plate-wrap
 			#rocket-wrap
 				.rocket
@@ -18,24 +37,13 @@ body
 				.rocket
 					img(src="img/rocket.png", alt="")
 			#plate-wrap
-				div#plate
+				#plate
 					h1.page-title.
 						cooming soon
 					h4.
 						сайт в процесі розробки
 					p.
 						але це не довго
-		#rocket-free-wrap
-			//- - var random = Math.floor(Math.random()*10)
-			//- - var name = 'anim-'+random
-			.free-wrap-first
-				.rocket
-					img(src="img/rocket.png", alt="")
-				img.component(src="img/pinion-component-1.png", alt="")
-			//- .free-wrap-second
-			//- 	.rocket
-			//- 		img(src="img/rocket.png", alt="")
-			//- 	img.component(src="img/pinion-component-1.png", alt="")
 
 	script(src="scripts/main.js")
 	
