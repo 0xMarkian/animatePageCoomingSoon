@@ -36,16 +36,16 @@ body
 				background linear-gradient(left,bgRed 40%,bgYellow 90%)
 				border-radius 50%
 				absolute top left
-				width 100%
+				width 120%
+				left -20%
 				height 100%
 				animation gradientAnim .5s linear alternate infinite
 			@keyframes gradientAnim
 				from
-					width 123%
-					left - 23%
 					opacity .3
 				to
 					width 100%
+					left 0
 					opacity 1
 
 			&:nth-child(2)
@@ -67,6 +67,10 @@ body
 					position relative
 					.rocket-compon-wrap
 						transform rotate(-15deg)
+						.track
+							&:before
+								width 180%
+								left -80%
 					&:after
 						content ''
 						width 1px
@@ -96,7 +100,7 @@ body
 				top -50px
 				left 100px
 				coords = {
-					x: -50vw 40vw
+					x: -60vw 40vw
 					y: 0vh -50vh
 				}
 				freeWrapFly(speed,coords,$animTimeFunc,80)
