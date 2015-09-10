@@ -19,7 +19,7 @@ body
 	font-size 120%
 	overflow hidden
 	@media screen and (max-width: 992px)
-			font-size 200%
+			// font-size 200%
 .container
 	.tracks
 		absolute top 18px left 1px
@@ -79,74 +79,78 @@ body
 						absolute top 75% left 40%
 				img.component
 					position relative
-					// top 40px
 					margin 20px 0 0 23px
 					display block
 					z-index 2
 					transition all .5s 2s
+					// animation pinionRotate 4s infinite linear
 					@keyframes pinionRotate
 						from
 							transform rotate(-180deg)
 						to
 							transform rotate(180deg)
 			.free-wrap-first
-				top -20px
+				top -70px
+				left 30px
 				coords = {
 					x: -30vw 40vw
 					y: 30vh -50vh
 				}
 				freeWrapFly(speed,coords,$animTimeFunc,80)
+				.component
+					animation-direction normal 
 			.free-wrap-second
-				top -50px
-				left 100px
+				top -35px
+				left 80px
 				coords = {
 					x: -60vw 40vw
 					y: 0vh -50vh
 				}
 				freeWrapFly(speed,coords,$animTimeFunc,80)
+				.component
+					animation-duration 2.2s
 			.free-wrap-third
-				top 10px
+				top 30px
 				left 90px
 				coords = {
 					x: 60vw -40vw
 					y: 30vh -40vh
 				}
 				freeWrapFly(speed,coords,$animTimeFunc,80)
+				.component
+					animation-timing-function ease !important
+					animation-duration 2s
+					// animation-direction alternate
 				.rocket
 					.rocket-compon-wrap
 						transform rotate(-165deg) !important
 	#rocket-plate-wrap
-		// animation none !important
-		//animation
 		$animTimeFunc = cubic-bezier(0.23, 1, 0.32, 1)
 		$animDelay = rocketComeDelay
 		
+		//main flying and delivery plate
 		coords = {
-			x: -70vw 0vw,
+			x: -100vw 0vw,
 			y: 50vh 0vh
 		}
 		countedAnimData = fly(speed,coords,$animDelay $animTimeFunc backwards,,false)//this work only like function and return value
-		+adaptiveForSmall()
-			coords[x][0] = -100vw
-			fly(speed,coords,$animDelay $animTimeFunc both)
 
+		//trembling after delivery
 		//tb - trembling, T - time, D - delay, F - function
-		$tbAnimTF = linear
-		$tbAnimT = 1s
-		$tbAnimD = countedAnimData.animArg[1]
-		$tbOffset = 4px
+		$tbAnimTF = linear; $tbAnimT = 1s;$tbAnimD = countedAnimData.animArg[1]; $tbOffset = 4px
 		$tbAnimCoords = {
 			x:0 0,
 			y:0 (- unit($tbOffset/4,'vh'))
 		}
-		fly($tbAnimT, $tbAnimCoords, $tbAnimTF alternate infinite,,true, countedAnimData)
+		// fly($tbAnimT, $tbAnimCoords, $tbAnimTF alternate infinite,,true, countedAnimData)
 		
-		blockWidth = 700px
-		width blockWidth
+		width 700px
 		+adaptiveForSmall()
 			width 92%
+			left 2%
 		margin 0 auto
-		position relative
+		position absolute
+		left calc(50% - 350px)
 		
 
 		$offset = 70
@@ -157,17 +161,23 @@ body
 			position relative
 			z-index 2
 			.rocket
+				width 13%
 				position absolute
+				.tracks
+					top 22%
+					height 17%
+					.track
+						height 100%
 				&:nth-child(1)
 					left 3.5%
 				&:nth-child(2)
-					right -20px
-				&:before,
-				&:after
+					right -2%
+				
+				&:after,&:before
 					content ''
 					background rgba(30,30,30,.8)
-					width 1%
-					height 120%
+					width 1px
+					height 85px
 					absolute top 68% left
 					margin-left 26%
 					transform-origin 0 0
@@ -186,7 +196,7 @@ body
 				&:before
 					left 1%
 				&:after
-					left 3%
+					left 5%
 				img
 					max-width 100%
 		#plate-wrap
@@ -215,7 +225,8 @@ body
 				width 90%
 				left 5%
 				text-align center
-				padding 1% 0
+				padding 20px 0
+				margin-bottom 20px
 				position relative
 				h1
 					margin 0
@@ -244,9 +255,9 @@ body
 						height 1px
 						background black
 					&:before
-						absolute top 50% left 160px
+						absolute top 50% left 25%
 					&:after
-						absolute top 50% right 160px
+						absolute top 50% right 25%
 				&:after,
 				&:before
 					content ''
@@ -263,6 +274,7 @@ body
 					absolute top 4% right 1%
 	>img
 		position fixed
+		opacity .8
 		animation iconRotate 4s  cubic-bezier(0.6, -0.28, 0.735, 0.045) infinite both alternate
 		@keyframes iconRotate
 			from
@@ -277,7 +289,7 @@ body
 			top 10%
 			left 8%
 		&.settings
-			right 30%
+			right 20%
 			top 10%
 		&.adjustment
 			bottom 20%

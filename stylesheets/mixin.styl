@@ -112,7 +112,7 @@ freeWrapFly(speed,coords,animArgs,acceleration = 10)
 		pickAnimData = fly(speed,rocketCoordsPick,animArgs,,false)
 		fly(wrapSpeed,rocketCoordsAway,linear wrapDelay+wrapTime both,,true,pickAnimData)
 	.component
-		animation setOpacity .5s wrapDelay+wrapTime both, pinionRotate 4s wrapDelay+wrapTime linear infinite
+		animation setOpacity .5s wrapDelay+wrapTime normal both, pinionRotate 4s wrapDelay+wrapTime linear reverse infinite
 		@keyframes setOpacity
 			from
 				opacity .7
