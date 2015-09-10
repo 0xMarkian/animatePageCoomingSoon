@@ -8,6 +8,11 @@ body {
   font-size: 120%;
   overflow: hidden;
 }
+@media screen and (max-width: 992px) {
+  body {
+    font-size: 80%;
+  }
+}
 .container .tracks {
   position: absolute;
   top: 18px;
@@ -220,13 +225,13 @@ body {
 .container #planet #rocket-free-wrap .free-wrap-first {
   top: -70px;
   left: 30px;
-  -webkit-animation: 'ANIM-V' 0.942809041582063s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.414213562373095s both;
-  -moz-animation: 'ANIM-V' 0.942809041582063s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.414213562373095s both;
-  -o-animation: 'ANIM-V' 0.942809041582063s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.414213562373095s both;
-  -ms-animation: 'ANIM-V' 0.942809041582063s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.414213562373095s both;
-  animation: 'ANIM-V' 0.942809041582063s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.414213562373095s both;
+  -webkit-animation: 'ANIM-e' 0.942809041582063s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.414213562373095s both;
+  -moz-animation: 'ANIM-e' 0.942809041582063s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.414213562373095s both;
+  -o-animation: 'ANIM-e' 0.942809041582063s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.414213562373095s both;
+  -ms-animation: 'ANIM-e' 0.942809041582063s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.414213562373095s both;
+  animation: 'ANIM-e' 0.942809041582063s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.414213562373095s both;
 }
-@-moz-keyframes ANIM-V {
+@-moz-keyframes ANIM-e {
   from {
     -webkit-transform: translateX(-20vw) translateY(20vh);
     -moz-transform: translateX(-20vw) translateY(20vh);
@@ -242,7 +247,7 @@ body {
     transform: translateX(0) translateY(0);
   }
 }
-@-webkit-keyframes ANIM-V {
+@-webkit-keyframes ANIM-e {
   from {
     -webkit-transform: translateX(-20vw) translateY(20vh);
     -moz-transform: translateX(-20vw) translateY(20vh);
@@ -258,7 +263,7 @@ body {
     transform: translateX(0) translateY(0);
   }
 }
-@-o-keyframes ANIM-V {
+@-o-keyframes ANIM-e {
   from {
     -webkit-transform: translateX(-20vw) translateY(20vh);
     -moz-transform: translateX(-20vw) translateY(20vh);
@@ -274,7 +279,7 @@ body {
     transform: translateX(0) translateY(0);
   }
 }
-@keyframes ANIM-V {
+@keyframes ANIM-e {
   from {
     -webkit-transform: translateX(-20vw) translateY(20vh);
     -moz-transform: translateX(-20vw) translateY(20vh);
@@ -291,13 +296,13 @@ body {
   }
 }
 .container #planet #rocket-free-wrap .free-wrap-first .rocket {
-  -webkit-animation: 'ANIM-c' 2.13437474581095s linear 2.357022603955159s both, 'ANIM-x' 1.414213562373095s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  -moz-animation: 'ANIM-c' 2.13437474581095s linear 2.357022603955159s both, 'ANIM-x' 1.414213562373095s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  -o-animation: 'ANIM-c' 2.13437474581095s linear 2.357022603955159s both, 'ANIM-x' 1.414213562373095s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  -ms-animation: 'ANIM-c' 2.13437474581095s linear 2.357022603955159s both, 'ANIM-x' 1.414213562373095s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  animation: 'ANIM-c' 2.13437474581095s linear 2.357022603955159s both, 'ANIM-x' 1.414213562373095s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -webkit-animation: 'ANIM-R' 2.13437474581095s linear 2.357022603955159s both, 'ANIM-E' 1.414213562373095s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -moz-animation: 'ANIM-R' 2.13437474581095s linear 2.357022603955159s both, 'ANIM-E' 1.414213562373095s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -o-animation: 'ANIM-R' 2.13437474581095s linear 2.357022603955159s both, 'ANIM-E' 1.414213562373095s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -ms-animation: 'ANIM-R' 2.13437474581095s linear 2.357022603955159s both, 'ANIM-E' 1.414213562373095s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  animation: 'ANIM-R' 2.13437474581095s linear 2.357022603955159s both, 'ANIM-E' 1.414213562373095s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
-@-moz-keyframes ANIM-x {
+@-moz-keyframes ANIM-E {
   from {
     -webkit-transform: translateX(-30vw) translateY(30vh);
     -moz-transform: translateX(-30vw) translateY(30vh);
@@ -313,7 +318,7 @@ body {
     transform: translateX(0vw) translateY(0vh);
   }
 }
-@-webkit-keyframes ANIM-x {
+@-webkit-keyframes ANIM-E {
   from {
     -webkit-transform: translateX(-30vw) translateY(30vh);
     -moz-transform: translateX(-30vw) translateY(30vh);
@@ -329,7 +334,7 @@ body {
     transform: translateX(0vw) translateY(0vh);
   }
 }
-@-o-keyframes ANIM-x {
+@-o-keyframes ANIM-E {
   from {
     -webkit-transform: translateX(-30vw) translateY(30vh);
     -moz-transform: translateX(-30vw) translateY(30vh);
@@ -345,7 +350,7 @@ body {
     transform: translateX(0vw) translateY(0vh);
   }
 }
-@keyframes ANIM-x {
+@keyframes ANIM-E {
   from {
     -webkit-transform: translateX(-30vw) translateY(30vh);
     -moz-transform: translateX(-30vw) translateY(30vh);
@@ -361,7 +366,7 @@ body {
     transform: translateX(0vw) translateY(0vh);
   }
 }
-@-moz-keyframes ANIM-c {
+@-moz-keyframes ANIM-R {
   from {
     -webkit-transform: translateX(0vw) translateY(0vh);
     -moz-transform: translateX(0vw) translateY(0vh);
@@ -377,7 +382,7 @@ body {
     transform: translateX(40vw) translateY(-50vh);
   }
 }
-@-webkit-keyframes ANIM-c {
+@-webkit-keyframes ANIM-R {
   from {
     -webkit-transform: translateX(0vw) translateY(0vh);
     -moz-transform: translateX(0vw) translateY(0vh);
@@ -393,7 +398,7 @@ body {
     transform: translateX(40vw) translateY(-50vh);
   }
 }
-@-o-keyframes ANIM-c {
+@-o-keyframes ANIM-R {
   from {
     -webkit-transform: translateX(0vw) translateY(0vh);
     -moz-transform: translateX(0vw) translateY(0vh);
@@ -409,7 +414,7 @@ body {
     transform: translateX(40vw) translateY(-50vh);
   }
 }
-@keyframes ANIM-c {
+@keyframes ANIM-R {
   from {
     -webkit-transform: translateX(0vw) translateY(0vh);
     -moz-transform: translateX(0vw) translateY(0vh);
@@ -494,13 +499,13 @@ body {
 .container #planet #rocket-free-wrap .free-wrap-second {
   top: -35px;
   left: 80px;
-  -webkit-animation: 'ANIM-a' 1.699673171197595s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s both;
-  -moz-animation: 'ANIM-a' 1.699673171197595s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s both;
-  -o-animation: 'ANIM-a' 1.699673171197595s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s both;
-  -ms-animation: 'ANIM-a' 1.699673171197595s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s both;
-  animation: 'ANIM-a' 1.699673171197595s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s both;
+  -webkit-animation: 'ANIM-y' 1.699673171197595s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s both;
+  -moz-animation: 'ANIM-y' 1.699673171197595s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s both;
+  -o-animation: 'ANIM-y' 1.699673171197595s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s both;
+  -ms-animation: 'ANIM-y' 1.699673171197595s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s both;
+  animation: 'ANIM-y' 1.699673171197595s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s both;
 }
-@-moz-keyframes ANIM-a {
+@-moz-keyframes ANIM-y {
   from {
     -webkit-transform: translateX(-50vw) translateY(-10vh);
     -moz-transform: translateX(-50vw) translateY(-10vh);
@@ -516,7 +521,7 @@ body {
     transform: translateX(0) translateY(0);
   }
 }
-@-webkit-keyframes ANIM-a {
+@-webkit-keyframes ANIM-y {
   from {
     -webkit-transform: translateX(-50vw) translateY(-10vh);
     -moz-transform: translateX(-50vw) translateY(-10vh);
@@ -532,7 +537,7 @@ body {
     transform: translateX(0) translateY(0);
   }
 }
-@-o-keyframes ANIM-a {
+@-o-keyframes ANIM-y {
   from {
     -webkit-transform: translateX(-50vw) translateY(-10vh);
     -moz-transform: translateX(-50vw) translateY(-10vh);
@@ -548,7 +553,7 @@ body {
     transform: translateX(0) translateY(0);
   }
 }
-@keyframes ANIM-a {
+@keyframes ANIM-y {
   from {
     -webkit-transform: translateX(-50vw) translateY(-10vh);
     -moz-transform: translateX(-50vw) translateY(-10vh);
@@ -565,13 +570,13 @@ body {
   }
 }
 .container #planet #rocket-free-wrap .free-wrap-second .rocket {
-  -webkit-animation: 'ANIM-21' 2.13437474581095s linear 3.699673171197595s both, 'ANIM-C' 2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  -moz-animation: 'ANIM-21' 2.13437474581095s linear 3.699673171197595s both, 'ANIM-C' 2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  -o-animation: 'ANIM-21' 2.13437474581095s linear 3.699673171197595s both, 'ANIM-C' 2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  -ms-animation: 'ANIM-21' 2.13437474581095s linear 3.699673171197595s both, 'ANIM-C' 2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  animation: 'ANIM-21' 2.13437474581095s linear 3.699673171197595s both, 'ANIM-C' 2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -webkit-animation: 'ANIM-r' 2.13437474581095s linear 3.699673171197595s both, 'ANIM-u' 2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -moz-animation: 'ANIM-r' 2.13437474581095s linear 3.699673171197595s both, 'ANIM-u' 2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -o-animation: 'ANIM-r' 2.13437474581095s linear 3.699673171197595s both, 'ANIM-u' 2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -ms-animation: 'ANIM-r' 2.13437474581095s linear 3.699673171197595s both, 'ANIM-u' 2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  animation: 'ANIM-r' 2.13437474581095s linear 3.699673171197595s both, 'ANIM-u' 2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
-@-moz-keyframes ANIM-C {
+@-moz-keyframes ANIM-u {
   from {
     -webkit-transform: translateX(-60vw) translateY(0vh);
     -moz-transform: translateX(-60vw) translateY(0vh);
@@ -587,7 +592,7 @@ body {
     transform: translateX(0vw) translateY(0vh);
   }
 }
-@-webkit-keyframes ANIM-C {
+@-webkit-keyframes ANIM-u {
   from {
     -webkit-transform: translateX(-60vw) translateY(0vh);
     -moz-transform: translateX(-60vw) translateY(0vh);
@@ -603,7 +608,7 @@ body {
     transform: translateX(0vw) translateY(0vh);
   }
 }
-@-o-keyframes ANIM-C {
+@-o-keyframes ANIM-u {
   from {
     -webkit-transform: translateX(-60vw) translateY(0vh);
     -moz-transform: translateX(-60vw) translateY(0vh);
@@ -619,7 +624,7 @@ body {
     transform: translateX(0vw) translateY(0vh);
   }
 }
-@keyframes ANIM-C {
+@keyframes ANIM-u {
   from {
     -webkit-transform: translateX(-60vw) translateY(0vh);
     -moz-transform: translateX(-60vw) translateY(0vh);
@@ -635,7 +640,7 @@ body {
     transform: translateX(0vw) translateY(0vh);
   }
 }
-@-moz-keyframes ANIM-21 {
+@-moz-keyframes ANIM-r {
   from {
     -webkit-transform: translateX(0vw) translateY(0vh);
     -moz-transform: translateX(0vw) translateY(0vh);
@@ -651,7 +656,7 @@ body {
     transform: translateX(40vw) translateY(-50vh);
   }
 }
-@-webkit-keyframes ANIM-21 {
+@-webkit-keyframes ANIM-r {
   from {
     -webkit-transform: translateX(0vw) translateY(0vh);
     -moz-transform: translateX(0vw) translateY(0vh);
@@ -667,7 +672,7 @@ body {
     transform: translateX(40vw) translateY(-50vh);
   }
 }
-@-o-keyframes ANIM-21 {
+@-o-keyframes ANIM-r {
   from {
     -webkit-transform: translateX(0vw) translateY(0vh);
     -moz-transform: translateX(0vw) translateY(0vh);
@@ -683,7 +688,7 @@ body {
     transform: translateX(40vw) translateY(-50vh);
   }
 }
-@keyframes ANIM-21 {
+@keyframes ANIM-r {
   from {
     -webkit-transform: translateX(0vw) translateY(0vh);
     -moz-transform: translateX(0vw) translateY(0vh);
@@ -768,13 +773,13 @@ body {
 .container #planet #rocket-free-wrap .free-wrap-third {
   top: 30px;
   left: 90px;
-  -webkit-animation: 'ANIM-f' 2.426703296426839s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.236067977499789s both;
-  -moz-animation: 'ANIM-f' 2.426703296426839s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.236067977499789s both;
-  -o-animation: 'ANIM-f' 2.426703296426839s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.236067977499789s both;
-  -ms-animation: 'ANIM-f' 2.426703296426839s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.236067977499789s both;
-  animation: 'ANIM-f' 2.426703296426839s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.236067977499789s both;
+  -webkit-animation: 'ANIM-P' 2.426703296426839s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.236067977499789s both;
+  -moz-animation: 'ANIM-P' 2.426703296426839s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.236067977499789s both;
+  -o-animation: 'ANIM-P' 2.426703296426839s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.236067977499789s both;
+  -ms-animation: 'ANIM-P' 2.426703296426839s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.236067977499789s both;
+  animation: 'ANIM-P' 2.426703296426839s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.236067977499789s both;
 }
-@-moz-keyframes ANIM-f {
+@-moz-keyframes ANIM-P {
   from {
     -webkit-transform: translateX(70vw) translateY(20vh);
     -moz-transform: translateX(70vw) translateY(20vh);
@@ -790,7 +795,7 @@ body {
     transform: translateX(0) translateY(0);
   }
 }
-@-webkit-keyframes ANIM-f {
+@-webkit-keyframes ANIM-P {
   from {
     -webkit-transform: translateX(70vw) translateY(20vh);
     -moz-transform: translateX(70vw) translateY(20vh);
@@ -806,7 +811,7 @@ body {
     transform: translateX(0) translateY(0);
   }
 }
-@-o-keyframes ANIM-f {
+@-o-keyframes ANIM-P {
   from {
     -webkit-transform: translateX(70vw) translateY(20vh);
     -moz-transform: translateX(70vw) translateY(20vh);
@@ -822,7 +827,7 @@ body {
     transform: translateX(0) translateY(0);
   }
 }
-@keyframes ANIM-f {
+@keyframes ANIM-P {
   from {
     -webkit-transform: translateX(70vw) translateY(20vh);
     -moz-transform: translateX(70vw) translateY(20vh);
@@ -839,11 +844,11 @@ body {
   }
 }
 .container #planet #rocket-free-wrap .free-wrap-third .rocket {
-  -webkit-animation: 'ANIM-U' 1.885618083164127s linear 4.662771273926628s both, 'ANIM-l' 2.236067977499789s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  -moz-animation: 'ANIM-U' 1.885618083164127s linear 4.662771273926628s both, 'ANIM-l' 2.236067977499789s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  -o-animation: 'ANIM-U' 1.885618083164127s linear 4.662771273926628s both, 'ANIM-l' 2.236067977499789s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  -ms-animation: 'ANIM-U' 1.885618083164127s linear 4.662771273926628s both, 'ANIM-l' 2.236067977499789s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  animation: 'ANIM-U' 1.885618083164127s linear 4.662771273926628s both, 'ANIM-l' 2.236067977499789s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -webkit-animation: 'ANIM-h' 1.885618083164127s linear 4.662771273926628s both, 'ANIM-l' 2.236067977499789s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -moz-animation: 'ANIM-h' 1.885618083164127s linear 4.662771273926628s both, 'ANIM-l' 2.236067977499789s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -o-animation: 'ANIM-h' 1.885618083164127s linear 4.662771273926628s both, 'ANIM-l' 2.236067977499789s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -ms-animation: 'ANIM-h' 1.885618083164127s linear 4.662771273926628s both, 'ANIM-l' 2.236067977499789s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  animation: 'ANIM-h' 1.885618083164127s linear 4.662771273926628s both, 'ANIM-l' 2.236067977499789s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 @-moz-keyframes ANIM-l {
   from {
@@ -909,7 +914,7 @@ body {
     transform: translateX(0vw) translateY(0vh);
   }
 }
-@-moz-keyframes ANIM-U {
+@-moz-keyframes ANIM-h {
   from {
     -webkit-transform: translateX(0vw) translateY(0vh);
     -moz-transform: translateX(0vw) translateY(0vh);
@@ -925,7 +930,7 @@ body {
     transform: translateX(-40vw) translateY(-40vh);
   }
 }
-@-webkit-keyframes ANIM-U {
+@-webkit-keyframes ANIM-h {
   from {
     -webkit-transform: translateX(0vw) translateY(0vh);
     -moz-transform: translateX(0vw) translateY(0vh);
@@ -941,7 +946,7 @@ body {
     transform: translateX(-40vw) translateY(-40vh);
   }
 }
-@-o-keyframes ANIM-U {
+@-o-keyframes ANIM-h {
   from {
     -webkit-transform: translateX(0vw) translateY(0vh);
     -moz-transform: translateX(0vw) translateY(0vh);
@@ -957,7 +962,7 @@ body {
     transform: translateX(-40vw) translateY(-40vh);
   }
 }
-@keyframes ANIM-U {
+@keyframes ANIM-h {
   from {
     -webkit-transform: translateX(0vw) translateY(0vh);
     -moz-transform: translateX(0vw) translateY(0vh);
@@ -1052,10 +1057,142 @@ body {
   transform: rotate(-165deg) !important;
 }
 .container #rocket-plate-wrap {
+  -webkit-animation: 'ANIM-F' 1s linear alternate infinite, 'ANIM-t' 3.726779962499649s 4.5s cubic-bezier(0.23, 1, 0.32, 1) backwards;
+  -moz-animation: 'ANIM-F' 1s linear alternate infinite, 'ANIM-t' 3.726779962499649s 4.5s cubic-bezier(0.23, 1, 0.32, 1) backwards;
+  -o-animation: 'ANIM-F' 1s linear alternate infinite, 'ANIM-t' 3.726779962499649s 4.5s cubic-bezier(0.23, 1, 0.32, 1) backwards;
+  -ms-animation: 'ANIM-F' 1s linear alternate infinite, 'ANIM-t' 3.726779962499649s 4.5s cubic-bezier(0.23, 1, 0.32, 1) backwards;
+  animation: 'ANIM-F' 1s linear alternate infinite, 'ANIM-t' 3.726779962499649s 4.5s cubic-bezier(0.23, 1, 0.32, 1) backwards;
   width: 700px;
-  margin: 0 auto;
   position: absolute;
   left: calc(50% - 350px);
+}
+@-moz-keyframes ANIM-t {
+  from {
+    -webkit-transform: translateX(-100vw) translateY(50vh);
+    -moz-transform: translateX(-100vw) translateY(50vh);
+    -o-transform: translateX(-100vw) translateY(50vh);
+    -ms-transform: translateX(-100vw) translateY(50vh);
+    transform: translateX(-100vw) translateY(50vh);
+  }
+  to {
+    -webkit-transform: translateX(0vw) translateY(0vh);
+    -moz-transform: translateX(0vw) translateY(0vh);
+    -o-transform: translateX(0vw) translateY(0vh);
+    -ms-transform: translateX(0vw) translateY(0vh);
+    transform: translateX(0vw) translateY(0vh);
+  }
+}
+@-webkit-keyframes ANIM-t {
+  from {
+    -webkit-transform: translateX(-100vw) translateY(50vh);
+    -moz-transform: translateX(-100vw) translateY(50vh);
+    -o-transform: translateX(-100vw) translateY(50vh);
+    -ms-transform: translateX(-100vw) translateY(50vh);
+    transform: translateX(-100vw) translateY(50vh);
+  }
+  to {
+    -webkit-transform: translateX(0vw) translateY(0vh);
+    -moz-transform: translateX(0vw) translateY(0vh);
+    -o-transform: translateX(0vw) translateY(0vh);
+    -ms-transform: translateX(0vw) translateY(0vh);
+    transform: translateX(0vw) translateY(0vh);
+  }
+}
+@-o-keyframes ANIM-t {
+  from {
+    -webkit-transform: translateX(-100vw) translateY(50vh);
+    -moz-transform: translateX(-100vw) translateY(50vh);
+    -o-transform: translateX(-100vw) translateY(50vh);
+    -ms-transform: translateX(-100vw) translateY(50vh);
+    transform: translateX(-100vw) translateY(50vh);
+  }
+  to {
+    -webkit-transform: translateX(0vw) translateY(0vh);
+    -moz-transform: translateX(0vw) translateY(0vh);
+    -o-transform: translateX(0vw) translateY(0vh);
+    -ms-transform: translateX(0vw) translateY(0vh);
+    transform: translateX(0vw) translateY(0vh);
+  }
+}
+@keyframes ANIM-t {
+  from {
+    -webkit-transform: translateX(-100vw) translateY(50vh);
+    -moz-transform: translateX(-100vw) translateY(50vh);
+    -o-transform: translateX(-100vw) translateY(50vh);
+    -ms-transform: translateX(-100vw) translateY(50vh);
+    transform: translateX(-100vw) translateY(50vh);
+  }
+  to {
+    -webkit-transform: translateX(0vw) translateY(0vh);
+    -moz-transform: translateX(0vw) translateY(0vh);
+    -o-transform: translateX(0vw) translateY(0vh);
+    -ms-transform: translateX(0vw) translateY(0vh);
+    transform: translateX(0vw) translateY(0vh);
+  }
+}
+@-moz-keyframes ANIM-F {
+  from {
+    -webkit-transform: translateX(0) translateY(0);
+    -moz-transform: translateX(0) translateY(0);
+    -o-transform: translateX(0) translateY(0);
+    -ms-transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0);
+  }
+  to {
+    -webkit-transform: translateX(0) translateY(-1vh);
+    -moz-transform: translateX(0) translateY(-1vh);
+    -o-transform: translateX(0) translateY(-1vh);
+    -ms-transform: translateX(0) translateY(-1vh);
+    transform: translateX(0) translateY(-1vh);
+  }
+}
+@-webkit-keyframes ANIM-F {
+  from {
+    -webkit-transform: translateX(0) translateY(0);
+    -moz-transform: translateX(0) translateY(0);
+    -o-transform: translateX(0) translateY(0);
+    -ms-transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0);
+  }
+  to {
+    -webkit-transform: translateX(0) translateY(-1vh);
+    -moz-transform: translateX(0) translateY(-1vh);
+    -o-transform: translateX(0) translateY(-1vh);
+    -ms-transform: translateX(0) translateY(-1vh);
+    transform: translateX(0) translateY(-1vh);
+  }
+}
+@-o-keyframes ANIM-F {
+  from {
+    -webkit-transform: translateX(0) translateY(0);
+    -moz-transform: translateX(0) translateY(0);
+    -o-transform: translateX(0) translateY(0);
+    -ms-transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0);
+  }
+  to {
+    -webkit-transform: translateX(0) translateY(-1vh);
+    -moz-transform: translateX(0) translateY(-1vh);
+    -o-transform: translateX(0) translateY(-1vh);
+    -ms-transform: translateX(0) translateY(-1vh);
+    transform: translateX(0) translateY(-1vh);
+  }
+}
+@keyframes ANIM-F {
+  from {
+    -webkit-transform: translateX(0) translateY(0);
+    -moz-transform: translateX(0) translateY(0);
+    -o-transform: translateX(0) translateY(0);
+    -ms-transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0);
+  }
+  to {
+    -webkit-transform: translateX(0) translateY(-1vh);
+    -moz-transform: translateX(0) translateY(-1vh);
+    -o-transform: translateX(0) translateY(-1vh);
+    -ms-transform: translateX(0) translateY(-1vh);
+    transform: translateX(0) translateY(-1vh);
+  }
 }
 @media screen and (max-width: 992px) {
   .container #rocket-plate-wrap {

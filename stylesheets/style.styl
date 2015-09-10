@@ -19,7 +19,7 @@ body
 	font-size 120%
 	overflow hidden
 	@media screen and (max-width: 992px)
-			// font-size 200%
+			font-size 80%
 .container
 	.tracks
 		absolute top 18px left 1px
@@ -142,13 +142,12 @@ body
 			x:0 0,
 			y:0 (- unit($tbOffset/4,'vh'))
 		}
-		// fly($tbAnimT, $tbAnimCoords, $tbAnimTF alternate infinite,,true, countedAnimData)
+		fly($tbAnimT, $tbAnimCoords, $tbAnimTF alternate infinite,,true, countedAnimData)
 		
 		width 700px
 		+adaptiveForSmall()
 			width 92%
 			left 2%
-		margin 0 auto
 		position absolute
 		left calc(50% - 350px)
 		
