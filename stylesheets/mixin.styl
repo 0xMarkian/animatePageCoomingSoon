@@ -42,25 +42,26 @@ setKeyFrame(animName,coords)
 			transform :translateX(coords.x[0]) translateY(coords.y[0])
 		to
 			transform :translateX(coords.x[1]) translateY(coords.y[1])
-		// offsetX = coords.x[1]
-		// offsetY = coords.y[1]
-		// for i in 0..10
-		// 	step = i+'%'
-		// 	{step}
-		// 		if(i is 0)
-		// 			debug 1
+		// offsetX = (coords.x[1] - coords.x[0])/20
+		// offsetY = coords.y[1] - coords.y[0]
+		// newX = coords.x[0]
+		// newY = coords.y[0]
+		// for i in 0..100	
+		// 	if(i is 0)
+		// 		0%
 		// 			transform :translateX(coords.x[0]) translateY(coords.y[0])
-		// 		else if(i is 100)
+		// 	else if(i is 100)
+		// 		100%
 		// 			transform :translateX(coords.x[1]) translateY(coords.y[1])
-		// 		else if(i%2 is 0)
-		// 			if(i<50)			
-		// 				offsetX = coords.x[1] - offsetX/1.2
-		// 				offsetY = coords.y[1] - offsetY/1.1
-		// 				transform :translateX(offsetX) translateY(offsetY)
-		// 			else
-		// 				offsetX = coords.x[1] - offsetX/1.1
-		// 				offsetY = coords.y[1] - offsetY/1.2
-		// 				transform :translateX(offsetX) translateY(offsetY)
+		// 	else if(i%5 is 0)
+		// 		newX = newX + offsetX
+		// 		newY = newY + offsetY/5
+		// 		offsetY = offsetY - offsetY/5
+
+		// 		step = i+'%'
+		// 		{step}
+		// 			coords newX
+		// 			transform :translateX(newX) translateY(newY)
 
 
 fly(speed,coords,animArgs=null,animName= setAnimName(letters),setAnim=true,alreadeExistAnim= false)

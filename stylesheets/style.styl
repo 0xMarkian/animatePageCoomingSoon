@@ -9,7 +9,7 @@ second-color = rgb(235,235,235)
 speed = 30// viewport width or height per second
 
 animTimeFunc = cubic-bezier(0.075, 0.82, 0.165, 1)
-rocketComeDelay = 3s
+rocketComeDelay = 4.5s
 
 *
 	box-sizing border-box
@@ -21,6 +21,35 @@ body
 	@media screen and (max-width: 992px)
 			font-size 200%
 .container
+	.tracks
+		absolute top 18px left 1px
+		.track
+			position relative
+			width 20px
+			height (@width/2)
+			border-radius 50%
+			bgYellow = #FFC807
+			bgRed = #FF2C07
+			background linear-gradient(left,bgRed 10%,bgYellow 90%)
+			&:before
+				content ''
+				background linear-gradient(left,bgRed 40%,bgYellow 90%)
+				border-radius 50%
+				absolute top left
+				width 100%
+				height 100%
+				animation gradientAnim .5s linear alternate infinite
+			@keyframes gradientAnim
+				from
+					width 123%
+					left - 23%
+					opacity .3
+				to
+					width 100%
+					opacity 1
+
+			&:nth-child(2)
+				margin-left -3px
 	#planet
 		position relative
 		width 250px
@@ -30,33 +59,13 @@ body
 		box-shadow inset - sS  (- sS) (sS/3) (sS/3) darken(second-color, 20%)
 		border-radius 50%
 		margin 7% auto 0 auto
-		adaptiveForSmall(400px,400px)
-		// img
-		// 	position relative
-		// 	animation pinionRotate 4s linear infinite
-		// 	&:nth-child(1)
-		// 		left 20%
-		// 		top 20%
-		// 	&:nth-child(2)
-		// 		left 10.5%
-		// 		top 30%
-		// 		animation-direction reverse
-		// 		animation-duration 2.2s
-		// 	&:nth-child(3)
-		// 		top 46%
-		// 		left 3%
-		// 		backface-visibility hidden
-		// 		zoom .8
-		// 		animation-direction reverse
-		// 		animation-duration 2s
-		// 		// @keyframes smPinionRotate
 		#rocket-free-wrap
 			$animTimeFunc = cubic-bezier(0.55, 0.055, 0.675, 0.19)
 			div[class^='free-wrap']
 				position absolute
 				.rocket
 					position relative
-					img
+					.rocket-compon-wrap
 						transform rotate(-15deg)
 					&:after
 						content ''
@@ -88,7 +97,7 @@ body
 				left 100px
 				coords = {
 					x: -50vw 40vw
-					y: 35vh -50vh
+					y: 0vh -50vh
 				}
 				freeWrapFly(speed,coords,$animTimeFunc,80)
 			.free-wrap-third
@@ -100,7 +109,7 @@ body
 				}
 				freeWrapFly(speed,coords,$animTimeFunc,80)
 				.rocket
-					img
+					.rocket-compon-wrap
 						transform rotate(-165deg) !important
 	#rocket-plate-wrap
 		// animation none !important
