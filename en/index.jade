@@ -1,0 +1,70 @@
+- var rootPath = '../'
+
+<!DOCTYPE html>
+html(lang="en")
+head
+	meta(charset="UTF-8")
+	title Cooming Soon
+	link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css")
+	link(rel="stylesheet", href="../stylesheets/style.css")
+	meta(name="viewport" content="width=device-width, initial-scale=0.7")
+body
+	.container
+		img.wait(src="#{rootPath}img/wait.png", alt="")
+		img.settings(src="#{rootPath}img/settings.png", alt="")
+		img.adjustment(src="#{rootPath}img/adjustment.png", alt="")
+		img.scissors(src="#{rootPath}img/scissors.png", alt="")
+		#planet
+			#rocket-free-wrap
+				.free-wrap-first
+					.rocket
+						.rocket-compon-wrap
+							img(src="#{rootPath}img/rocket.png", alt="")
+							.tracks
+								.track
+								.track
+								.track
+					img.component(src="#{rootPath}img/layer2.png", alt="")
+				.free-wrap-second
+					.rocket
+						.rocket-compon-wrap
+							img(src="#{rootPath}img/rocket.png", alt="")
+							.tracks
+								.track
+								.track
+								.track
+					img.component(src="#{rootPath}img/layer3.png", alt="")
+				.free-wrap-third
+					.rocket
+						.rocket-compon-wrap
+							img(src="#{rootPath}img/rocket.png", alt="")
+							.tracks
+								.track
+								.track
+								.track
+					img.component(src="#{rootPath}img/layer3.png", alt="")
+		#rocket-plate-wrap
+			#rocket-wrap
+				.rocket
+					img(src="#{rootPath}img/rocket.png", alt="")
+					.tracks
+						.track
+						.track
+						.track
+				.rocket
+					.tracks
+						.track
+						.track
+						.track
+					img(src="#{rootPath}img/rocket.png", alt="")
+			#plate-wrap
+				#plate
+					h1.page-title.
+						cooming soon
+					h4.
+						the site is on track now
+					p.
+						but this won't be very long
+
+	script(src="../scripts/main.js")
+	
